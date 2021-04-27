@@ -7,10 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div id ="app" >
-        <h1>counter:{{ counter }}</h1>
-        <button v-on:click= "add">+</button>
-        <button v-on:click= "sub">-</button>
+    <div id = "app" >
+        <h1>Message:{{ message }}</h1>
+        <h1 v-once>Message:{{ message }}</h1>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -18,15 +17,7 @@
         var app = new Vue({
             el: '#app',
             data:{
-                counter:0
-            },
-            methods:{
-                add: function(){
-                    this.counter++
-                },
-                sub:function(){
-                    this.counter--
-                    }
+                message: 'hello Vue'
             }
         })
     </script>
