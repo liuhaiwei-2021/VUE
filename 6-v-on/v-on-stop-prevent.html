@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>    
+    
+</head>
+<body>
+    <div id = "app" @click= "divClick">        
+        <button @click.stop="btnClick">click</button>
+        <br/>
+
+        <form action="">
+            <input type="submit"  @click.prevent ="submit">
+        </form>
+        <br/>
+        <input type="text" @keydown.enter="keydown" name="" id="">
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            methods:{
+                btnClick(){
+                    console.log('button')
+                },
+                divClick(){
+                    console.log('div click')
+                },
+                submit(){
+                    console.log('submit')
+                },
+                keydown(){
+                    console.log('keydown')
+                }
+
+            }
+            
+        })
+    </script>
+</body>
+</html>
