@@ -49,10 +49,15 @@ var app = new Vue({
     computed:{
         totalPrice(){
             totalPrice=0
-            for(let i=0; i< this.books.length; i++){
-                totalPrice += this.books[i].Price * this.books[i].count
-            }
-            return totalPrice
+            // for method
+            // for(let book of this.books){
+            //     totalPrice += book.Price * book.count
+            // }
+            // return totalPrice
+
+         return this.books.reduce(function(previous,book){
+            return  previous + book.Price*book.count
+         },0)
         }
 
     },
@@ -62,3 +67,4 @@ var app = new Vue({
         }
     }                    
 })
+

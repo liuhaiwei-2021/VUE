@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!--1. single  -->
+      <!-- <label for="">
+          <input type="checkbox"  v-model="isAgree">Agree
+      </label>
+      <div>
+        <button :disabled="!isAgree">Next</button>
+      </div>
+    <h2>You choose: {{isAgree}}</h2> -->
+    <!-- 2.mutiply -->
+        <input type="checkbox" v-model="hobbies" id="" value="basketball">basketball
+        <input type="checkbox" v-model="hobbies" id="" value="football">football
+        <input type="checkbox" v-model="hobbies" id="" value="badminton">badminton
+        <input type="checkbox" v-model="hobbies" id="" value="tennis">tennis
+        <h2>Your hobbies: {{hobbies}}</h2>
+
+        <label v-for="item in originHobbies" for="item">
+            <input type="checkbox" :value="item" id="item" v-model="hobbies">{{item}}
+        </label>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+
+        var app = new Vue({
+                    el: '#app',
+                    data:{
+                        message:'v-mode',
+                        isAgree: false,
+                        hobbies:[],
+                        originHobbies:['basketball','football','badminton']
+                    }                    
+                })
+
+    </script>
+</body>
+</html>
