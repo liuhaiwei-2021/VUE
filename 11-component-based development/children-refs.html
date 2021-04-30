@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app" >
+       <cpn ref="cpn1"></cpn>
+       <cpn ref="cpn2"></cpn>
+       <cpn ref="cpn3"></cpn>
+
+       <button @click="btnClick">click</button>
+    </div>
+    <template id="cpn">
+        <div>
+            <h1>children refs</h1>
+        </div>
+    </template>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+         const cpn = {
+             template: "#cpn",
+             data(){
+                    return{
+                        message:'children'
+                    }
+                },
+                methods:{
+                    showMessage(){
+                        console.log('you are success');
+                    }
+                }
+         }
+        var app = new Vue({
+            el: '#app',
+            data:{
+                message: 'hello Vue'
+            },
+            components:{
+                cpn               
+            },
+            methods:{
+                btnClick(){
+                    // 1. $children method
+                    // this.$children[0].showMessage()
+                    // 2.$refs method
+                    this.$refs.cpn1.showMessage()
+                    // get children's data
+                    console.log(this.$refs.cpn1.message)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

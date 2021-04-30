@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="app" >
+        <cpn></cpn> 
+        <br/> 
+        <cpn></cpn>       
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h1>Counter: {{ counter }}</h1>
+            <button @click="add">+</button>
+            <p>{{ counter }}</p>
+            <button @click="sub">-</button>
+        </div>
+    </template>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        const cpn =Vue.component('cpn',{
+                template:"#cpn",
+                data(){
+                    return {
+                        counter: 0
+                    }
+                },
+                methods:{
+                    add(){
+                        this.counter++
+                    },
+                    sub(){
+                        this.counter--
+                    }
+                }
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data:{
+                message:'component'
+            },
+            components:{
+                cpn:cpn
+            }
+        })
+    </script>
+</body>
+</html>
