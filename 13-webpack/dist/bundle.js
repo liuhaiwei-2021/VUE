@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("Molly"),console.log(3)})();

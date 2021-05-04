@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id ="app" >
-        <cpn></cpn>  
+        <cpn><span slot="button">you should replace button</span></cpn>  
         <cpn>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
@@ -40,6 +40,7 @@
                 </li>
                 </ul>
         <slot></slot>
+        <slot name="button"> click</slot>
     </div>
     </template>
 
