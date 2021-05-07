@@ -3,7 +3,12 @@
     <router-link to="/home">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <!-- <router-link to="/user">User</router-link> -->
-     <router-link v-bind:to="'/user/'+userID">User</router-link>
+     <router-link v-bind:to="'/user/'+userID">User</router-link> |
+     <router-link :to="{path:'/profile',query:{name:'Molly',age:4}}">Profile</router-link> 
+     <div>
+        <button @click="profileclick">profileclick</button>
+     </div>
+     
      <router-view></router-view>
   </div>   
 </template>
@@ -13,6 +18,17 @@ export default {
   data () {
     return{
       userID:'firstuser'
+    }
+  },
+  methods:{
+    profileclick(){
+      this.$router.push({
+        path:'/profile',
+        query:{
+          name:'Molly',
+          age:4
+        }
+      })
     }
   }
 }
@@ -41,4 +57,8 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+button:hover{
+  color:  #42b983;
+  }
 </style>

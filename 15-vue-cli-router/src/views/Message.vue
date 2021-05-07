@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="message">
         <ul>
         <li>Message1</li>
         <li>Message2</li>
@@ -9,13 +9,3 @@
     </div>
  
 </template>
-
-<script>
-export default {
-    name:'Message'
-}
-</script>
-
-<style>
-
-</style>

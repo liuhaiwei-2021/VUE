@@ -1,11 +1,9 @@
 <template>
   <div class="home">
     <h1>This is an home page</h1>
-    
-     <router-link to="/home/news">News</router-link> |
-     <router-link to="/home/message">Message</router-link> 
-
+    <router-link to="/home/news">News</router-link>
     <router-view></router-view>
+
   </div>
 </template>
 
@@ -16,11 +14,7 @@
 // import Message from '@/components/Message.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    // HelloWorld
-    // News,
-    // Message
-  }
+  name: 'Home'
 }
+
 </script>

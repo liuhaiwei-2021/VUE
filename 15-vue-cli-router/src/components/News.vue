@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="news">
         <ul>
             <li>News1</li>
             <li>News2</li>

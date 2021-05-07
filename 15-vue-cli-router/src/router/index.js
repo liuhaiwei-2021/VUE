@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-// import News from  '../components/News.vue'
+import News from  '../components/News.vue'
+// import Profile from '../components/Profile.vue'
 
 const routes = [
   {
@@ -11,24 +12,9 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
-    chidren:[
-      {
-        path:'',
-        redirect:'news'
-
-      },
-      {
-        path:'news',
-        name:'News',
-        component: () => import( '../components/News.vue')
-        // component:News
-      },
-      {
-        path:'message',
-        name:'Message',
-        component: () => import('../components/Message.vue')  
-      }
-    ]
+    children: [
+      { path: 'news', component: News },
+    ],
   },
   {
     path: '/about',
@@ -41,11 +27,14 @@ const routes = [
   {
     path: '/user/:userID',
     name: 'User',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/User.vue')
+    component: () => import('../views/User.vue')
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../components/Profile.vue')
   }
+ 
 ]
 
 const router = createRouter({
