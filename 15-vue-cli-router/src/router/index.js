@@ -6,10 +6,16 @@ import News from  '../components/News.vue'
 const routes = [
   {
     path:'',
+    meta:{
+      title:'Home'
+    },
     redirect:'/home'
   },
   {
     path: '/home',
+    meta:{
+      title:'Home'
+    },
     name: 'Home',
     component: Home,
     children: [
@@ -18,6 +24,9 @@ const routes = [
   },
   {
     path: '/about',
+    meta:{
+      title:'About'
+    },
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -26,11 +35,17 @@ const routes = [
   },
   {
     path: '/user/:userID',
+    meta:{
+      title:'User'
+    },
     name: 'User',
     component: () => import('../views/User.vue')
   },
   {
     path: '/profile',
+    meta:{
+      title:'Profile'
+    },
     name: 'Profile',
     component: () => import('../components/Profile.vue')
   }
@@ -41,6 +56,12 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes:routes,
   linkActiveClass:'Active'
+})
+router.beforeEach((to,from,next) =>{
+  document.title = to.meta.title
+  console.log(to.meta)
+  next()
+
 })
 
 export default router
