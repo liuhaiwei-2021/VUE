@@ -9,7 +9,15 @@
         <button @click="profileclick">profileclick</button>
      </div>
      
-     <router-view></router-view>
+     <!-- <router-view></router-view> -->
+
+     <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component"  v-if="$route.meta.keepAlive"/>
+      </keep-alive>
+      <component :is="Component"  v-if="!$route.meta.keepAlive"/>
+    </router-view> 
+
   </div>   
 </template>
 
@@ -30,6 +38,16 @@ export default {
         }
       })
     }
+  },
+ activated(){
+    console.log(this.path)
+    this.$router.push(this.path)
+
+  },  
+  beforeRouteLeave(to, from, next) {
+    console.log(this.$route.path)
+    this.path = this.$route.path
+    next()
   }
 }
 </script>

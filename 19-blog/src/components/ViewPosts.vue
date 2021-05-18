@@ -16,6 +16,16 @@
 
         </div>
 
+        <div class="card" v-for="(item,index) in data1" :key="index">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">
+                {{ item.body }}
+                </p>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block mt-5" @click="getalldata">get all data</button>
+
         
     </div>
   
@@ -23,9 +33,26 @@
 
 <script>
 export default {
-    props:['posts']
+    props:['posts'],
+    data(){
+        return {
+            data1: [],
+            }
+    },
+    methods:{
+        getalldata(){
+            fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(json => {this.data1 = json})
+        }
+        
+
+    }
 
 }
+
+    
+
 </script>
 
 <style>

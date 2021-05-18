@@ -2,19 +2,34 @@
   <div class="home">
     <h1>This is an home page</h1>
     <router-link to="/home/news">News</router-link>
-    <router-view></router-view>
+    
+    
+ 
+<!-- 
+  <router-view v-slot="{ Component }">
+      <keep-alive include="Home,About">
+        <component class="view" :is="Component" />
+      </keep-alive>
+    </router-view> -->
+  
 
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-// import News from '@/components/News.vue'
-// import Message from '@/components/Message.vue'
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  created () {
+    console.log('home created')
+
+  },
+  destoryed(){
+    console.log('home destoryed')
+
+  }
+ 
 }
+
 
 </script>

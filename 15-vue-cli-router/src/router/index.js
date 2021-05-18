@@ -7,25 +7,28 @@ const routes = [
   {
     path:'',
     meta:{
-      title:'Home'
+      title:'Home',
+      keepAlive:true
     },
     redirect:'/home'
   },
   {
     path: '/home',
     meta:{
-      title:'Home'
+      title:'Home',
+      keepAlive:true
     },
     name: 'Home',
     component: Home,
     children: [
-      { path: 'news', component: News },
+      { path: 'news', meta:{keepAlive:true}, component: News },
     ],
   },
   {
     path: '/about',
     meta:{
-      title:'About'
+      title:'About',
+      keepAlive:true
     },
     name: 'About',
     // route level code-splitting
@@ -59,7 +62,6 @@ const router = createRouter({
 })
 router.beforeEach((to,from,next) =>{
   document.title = to.meta.title
-  console.log(to.meta)
   next()
 
 })
