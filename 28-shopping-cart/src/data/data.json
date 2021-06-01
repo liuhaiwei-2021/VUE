@@ -1,0 +1,44 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "MacBook Air",
+        "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis distinctio explicabo ipsum quos ullam blanditiis.",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis iusto eius, deserunt eos libero molestias voluptate rem. Itaque, excepturi quidem ratione sapiente exercitationem iure voluptate quae hic cum ab!",
+        "price": 19390,
+        "image": "https://cf-images.dustin.eu/cdn-cgi/image/fit=contain,format=auto,width=384/image/d200001004295143/apple-macbook-air-2020-rymdgr-m1-16gb-1024gb-133.jpg"
+      },
+      {
+        "id": 2,
+        "name": "HP 255 G7",
+        "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis distinctio explicabo ipsum quos ullam blanditiis.",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis iusto eius, deserunt eos libero molestias voluptate rem. Itaque, excepturi quidem ratione sapiente exercitationem iure voluptate quae hic cum ab!",
+        "price": 5190,
+        "image": "https://cf-images.dustin.eu/cdn-cgi/image/fit=contain,format=auto,width=384/image/d200001004247500/hp-255-g7-ryzen-5-8gb-256gb-156.jpg"
+      },
+      {
+        "id": 3,
+        "name": "HP Elite Dragonfly",
+        "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis distinctio explicabo ipsum quos ullam blanditiis.",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis iusto eius, deserunt eos libero molestias voluptate rem. Itaque, excepturi quidem ratione sapiente exercitationem iure voluptate quae hic cum ab!",
+        "price": 25990,
+        "image": "https://cf-images.dustin.eu/cdn-cgi/image/fit=contain,format=auto,width=384/image/d200001004226985/hp-elite-dragonfly-core-i7-16gb-1000gb-4g-133.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Razer Blade",
+        "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis distinctio explicabo ipsum quos ullam blanditiis.",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis iusto eius, deserunt eos libero molestias voluptate rem. Itaque, excepturi quidem ratione sapiente exercitationem iure voluptate quae hic cum ab!",
+        "price": 11990,
+        "image": "https://cf-images.dustin.eu/cdn-cgi/image/fit=contain,format=auto,width=384/image/d20000126509/razer-blade-base-core-i7-16gb-256gb-120hz-156-gtx-1660-ti.jpg"
+      },
+      {
+        "id": 5,
+        "name": "MSI GE76",
+        "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis distinctio explicabo ipsum quos ullam blanditiis.",
+        "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis iusto eius, deserunt eos libero molestias voluptate rem. Itaque, excepturi quidem ratione sapiente exercitationem iure voluptate quae hic cum ab!",
+        "price": 32490,
+        "image": "https://cf-images.dustin.eu/cdn-cgi/image/fit=contain,format=auto,width=384/image/d200001001376131/msi-ge76-10uh-046ne-raider-core-i7-32gb-173-rtx-3080.jpg"
+      }
+    ]
+  }
