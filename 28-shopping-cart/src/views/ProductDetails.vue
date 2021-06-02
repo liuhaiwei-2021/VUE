@@ -1,9 +1,9 @@
 <template>
   <div >
-    <Loader v-if="loading"/>     
+    <Loader v-if="product_loading"/>     
       
     <section class="text-center rounded shadow p-5" v-if="product">
-        <h3>{{ product.name }}</h3>
+        <h3>Product Details</h3>
         <div class="row">
             <div class="col-lg-6 mt-5">
                 <img :src="product.image" alt="" srcset="">
@@ -16,7 +16,7 @@
                     <h3><span class="text-danger">{{product.price}}</span> SEK</h3>
                 <div>
                     <button class="btn btn-primary" @click="onClick">Add To Cart</button>
-                    <!-- <input type="number" class="form-control" v-model="quantity"> -->
+                    <input type="number" class="form-control" v-model="quantity">
             </div>
             </div>
             
@@ -38,20 +38,27 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name:'ProductDetails',
+    data(){
+        return {
+            quantity: 1
+
+        }
+    },
     components:{
         Loader
     },
     props:['id'],
-    data() {
-        return{
 
-        }
-    },
     computed: {
-        ...mapGetters(['product','loading'])
+        ...mapGetters(['product','product_loading'])
     },
     methods: {
-        ...mapActions(['getProduct'])
+        ...mapActions(['getProduct','addToCart']),
+        onClick(){
+            this.addToCart({product: this.product, quantity: this.quantity})
+            this.quantity = 1
+            }
+
     },
     created() {
         this.getProduct(this.id)
