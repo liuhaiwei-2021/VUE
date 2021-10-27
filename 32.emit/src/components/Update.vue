@@ -5,7 +5,7 @@
             Update
         </div>
        <div class="card-body">
-           <form >
+           <form @submit.prevent="update">
                <div class="row mb-3">
                    <div class="col">
                        <div class="form-outline">
@@ -24,9 +24,9 @@
                     <label class="form-label" for="email">Email:</label>
                     <input type="email" id="email" class="form-control" v-model="newEmail"/>                           
                 </div> 
-                <button class="btn btn-outline-primary btn-block form-control">  Update</button>
+                <button class="btn btn-outline-primary btn-block form-control"> Update</button>
            </form>
-           {{newName}}
+           
        </div>
     </div>
   </div>
@@ -41,6 +41,16 @@ export default {
             newAge: this.age,
             newEmail: this.email
         }
+    },
+    methods:{
+       update(){
+           let user={
+               name: this.newName,
+               age:this.newAge,
+               email:this.newEmail
+           }
+         this.$emit('user-update', user)
+       }
     }   
 }
 </script>

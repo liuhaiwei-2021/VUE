@@ -2,7 +2,7 @@
   <div id="app" class="container mt-2">
     <div class="row row-cols-2 g-4">  
       <Display :name="name" :age="age" :email="email"/>
-      <Update  :name="name" :age="age" :email="email"/>
+      <Update  :name="name" :age="age" :email="email" @user-update='update'/>
     </div>  
   
   </div>
@@ -26,6 +26,14 @@ export default {
   components: {
     Display,
     Update    
+  },
+  methods:{
+    update(newUser){
+      this.name=newUser.name
+      this.age=newUser.age
+      this.email=newUser.email
+    }
+
   }
 }
 </script>
